@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 public class ClasseTeste implements Serializable {
     private static final long serialVersionUID = -299482035708790407L;
-    int carambolas;
+    int var;
 
     public void contar(){
         System.out.println("dsafasf");
@@ -14,7 +14,7 @@ public class ClasseTeste implements Serializable {
         return 1;
     };
 
-    public void setCarambolas(int i){
+    public void setVar(int i){
 
     };
 }

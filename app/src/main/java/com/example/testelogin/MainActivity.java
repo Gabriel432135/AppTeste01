@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                     //------------------------------------------------------------------------------------
 
                     ClasseTeste testeOutputObjeto = new ClasseTeste();
-                    testeOutputObjeto.setCarambolas(3);
+                    testeOutputObjeto.setVar(3);
 
                     try {
                         FileOutputStream arquivoClasseTeste = new FileOutputStream(Environment.getExternalStorageDirectory().toString()+"/Download/save.act");
