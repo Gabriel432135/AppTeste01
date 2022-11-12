@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TesteLogin</string>
+    <string name="edit_usuario">Usuário</string>
+    <string name="edit_senha">Senha</string>
+    <string name="btn_entrar">Entrar</string>
+    <string name="btn_criar">Criar novo usuário</string>
+    <string name="text_ou">ou</string>
+    <string name="login">Efetuar login</string>
+    <string name="criar_usuário">Criar novo usuário</string>
+</resources>
