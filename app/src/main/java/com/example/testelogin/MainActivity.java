@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.net.ServerSocket;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private int total, progresso;
     private Runnable barraProgresso, runfinal, nome;
     private Handler handler;
+    private Client client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +44,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         setContentView(view);
-
-
 
         handler = new Handler();
 
@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
             if(ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)==PackageManager.PERMISSION_GRANTED){
                 new Thread(() -> {
-
                     File file;
                     file = new File(Environment.getExternalStorageDirectory().toString() + "/Download");
                     File list[] = file.listFiles();
@@ -118,6 +117,17 @@ public class MainActivity extends AppCompatActivity {
                 }).start();
             }
         });
+
+        binding.button3.setOnClickListener(view1 -> {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.INTERNET}, 2);
+            if(ActivityCompat.checkSelfPermission(this, Manifest.permission.INTERNET)==PackageManager.PERMISSION_GRANTED){
+                new Thread(() -> {
+                    client = new Client();
+                    client.connect("192.168.1.7", 3322);
+                }).start();
+            }
+        });
+
     }
 
 
